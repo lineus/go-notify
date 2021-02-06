@@ -5,7 +5,6 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/aws/aws-sdk-go-v2/aws"
 	"github.com/aws/aws-sdk-go-v2/config"
 	"github.com/aws/aws-sdk-go-v2/service/sns"
 )
@@ -24,14 +23,14 @@ func Notify(msg string) error {
 		log.Fatal(err)
 	}
 
-	fmt.PrintF("%+v\n", config)
+	fmt.Printf("%+v\n", config)
 
 	client := sns.NewFromConfig(config)
 
-	input := &sns.PublishInput{
-		Message:  aws.String(msg),
-		TopicArn: aws.String(arn),
-	}
+	// input := &sns.PublishInput{
+	// 	Message:  aws.String(msg),
+	// 	TopicArn: aws.String(arn),
+	// }
 
 	// _, err = client.Publish(context.TODO(), input)
 
