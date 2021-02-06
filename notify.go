@@ -25,7 +25,7 @@ func Notify(msg string) error {
 
 	fmt.Printf("%+v\n", config)
 
-	client := sns.NewFromConfig(config)
+	// client := sns.NewFromConfig(config)
 
 	// input := &sns.PublishInput{
 	// 	Message:  aws.String(msg),
