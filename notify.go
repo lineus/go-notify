@@ -16,8 +16,8 @@ type SNSPublishAPI interface {
 		optFns ...func(*sns.Options)) (*sns.PublishOutput, error)
 }
 
-// Notify notifies via sms via aws
-func Notify(arn string, msg string) error {
+// Send notifies via sms via aws
+func Send(arn string, msg string) error {
 	config, err := config.LoadDefaultConfig(context.TODO())
 	if err != nil {
 		log.Fatal("Error Loading AWS Config: ", err)
